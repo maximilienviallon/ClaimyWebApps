@@ -4,19 +4,17 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace ClaimyWebApps.Models
+namespace WebApplication1.Models
 {
     public class Customer
     {
         [Required]
         public int ID { get; set; }
-        
-        
         public string Name { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
         public Claim Claim { get; set; }
-        public int ClaimId { get; set; }
+        public IEnumerable<Claim> Claims { get; set; }
 
     }
 }
