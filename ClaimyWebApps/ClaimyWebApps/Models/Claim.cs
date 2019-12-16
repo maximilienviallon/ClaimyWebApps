@@ -8,20 +8,30 @@ namespace ClaimyWebApps.Models
 {
     public class Claim
     {
-        public int ClaimID { get; set; }
-        public int FeeID { get; set; }
-        public string ReasonCode { get; set; }
-        public string Comment { get; set; }
+        [Required]
+        public int ClaimID { get; set; } //prim key
+
+        //table fields
+        public int FeeNum { get; set; }
+        public string Transgression { get; set; }
+        public string Remarks { get; set; }
         public string LicensePlate { get; set; }
-        public string DriversFirstName { get; set; }
-        public string DriversSurname { get; set; }
-        public string Address { get; set; }
+        public string DriversName { get; set; } //surname + lastname?
+        public string Address { get; set; } 
         public string PostCode { get; set; }
-        public string City { get; set; }
         public string Email { get; set; }
         public string Appeal { get; set; }
+        public string GuardNumber { get; set; }
+        public string Amount { get; set; }
+        public string PaymentInfo { get; set; }
 
-        public Customer Customer { get; set; }
+        //foreign keys
+        public int CustomerID { get; set; }
+
+        public ICollectible<Customer> Customers; //Connected to customer
+        public ICollectible<Employee> Employees; //added to this employee's watchlist
+        public ICollectible<ZipCity> ZipCities; //zipcode - city
+
 
 
     }

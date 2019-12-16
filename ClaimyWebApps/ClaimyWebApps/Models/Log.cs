@@ -7,11 +7,21 @@ namespace ClaimyWebApps.Models
 {
     public class Log
     {
-        public int Id { get; set; }
-        public Reply Reply { get; set; }
-        public int ReplyId { get; set; }
-        public Claim Claim { get; set; }
-        public int ClaimId { get; set; }
+        [Required]
+        public int LogID { get; set; } //prim key
+
+        //table fields
+        public int Type { get; set; }
+        public int AdditionalInfo { get; set; }
+        //foreign keys
+        public int EmployeeID { get; set; }
+        public int CustomerID { get; set; } //should be here, could log stuff unrelated to cases
+        public int ClaimID { get; set; }
+
+        public ICollectible<Customer> Customers; // Customer done something
+        public ICollectible<Employee> Employees; //Employee done something
+        public ICollectible<Reply> Replies; //Message happened
+        public ICollectible<Claim> Claims; //on which case thing happened
 
     }
 }
