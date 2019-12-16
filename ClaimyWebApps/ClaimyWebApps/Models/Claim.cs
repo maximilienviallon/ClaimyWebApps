@@ -27,11 +27,11 @@ namespace ClaimyWebApps.Models
         public string PaymentInfo { get; set; }
 
         //foreign keys
-        public int CustomerID { get; set; }
+        //public int CustomerID { get; set; }
 
-        public ICollectible<Customer> Customers; //Connected to customer
-        public ICollectible<Employee> Employees; //added to this employee's watchlist
-        public ICollectible<ZipCity> ZipCities; //zipcode - city
+        public ICollection<Customer> Customers { get; set; } //Connected to customer
+        public ICollection<Employee> Employees { get; set; } //added to this employee's watchlist
+        public ICollection<ZipCity> ZipCities { get; set; } //zipcode - city
 
 
 

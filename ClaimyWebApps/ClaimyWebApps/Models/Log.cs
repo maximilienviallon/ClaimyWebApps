@@ -15,18 +15,16 @@ namespace ClaimyWebApps.Models
         public int Type { get; set; }
         public int AdditionalInfo { get; set; }
         //foreign keys
-        public int EmployeeID { get; set; }
-        public int CustomerID { get; set; } //should be here, could log stuff unrelated to cases
-        public int ClaimID { get; set; }
+        //public int EmployeeID { get; set; }
+        //public int CustomerID { get; set; } //should be here, could log stuff unrelated to cases
+        //public int ClaimID { get; set; }
 
-        public ICollectible<Customer> Customers; // Customer done something
-        public ICollectible<Employee> Employees; //Employee done something
-        public ICollectible<Reply> Replies; //Message happened
-        public ICollectible<Claim> Claims; //on which case thing happened
+        public ICollection<Customer> Customers { get; set; } // Customer done something
+        public ICollection<Employee> Employees { get; set; } //Employee done something
+        public ICollection<Reply> Replies { get; set; } //Message happened
+        public ICollection<Claim> Claims { get; set; } //on which case thing happened
 
     }
 
-    public interface ICollectible<T>
-    {
-    }
+
 }

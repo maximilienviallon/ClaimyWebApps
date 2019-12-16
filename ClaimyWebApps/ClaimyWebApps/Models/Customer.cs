@@ -19,14 +19,17 @@ namespace ClaimyWebApps.Models
 
         //What do we wanna store about them? Do we really need to know where they from and stuff?
         public string Address { get; set; } 
-        public string PostCode { get; set; }
+        public string PostCodeID { get; set; }
 
         //foreign keys
 
-        public ICollectible<Claim> Claims; // Claims connected to customer
-        public ICollectible<ZipCity> ZipCities; //zipcode - city
-        public ICollectible<Reply> Replies; //replies written by Customer
-        public ICollectible<Log> Logs; //events triggered by customer
+        //public int Claim { get; set; }
+        //public string Type { get; set; }
+
+        public ICollection<Claim> Claims { get; set; } // Claims connected to customer
+        public ICollection<ZipCity> ZipCities { get; set; } //zipcode - city
+        public ICollection<Reply> Replies { get; set; } //replies written by Customer
+        public ICollection<Log> Logs { get; set; } //events triggered by customer
 
 
 

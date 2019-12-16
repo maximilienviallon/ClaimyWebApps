@@ -25,7 +25,7 @@ namespace ClaimyWebApps.Models
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Log> Logs { get; set; }
         public DbSet<Reply> Replies { get; set; }
-        public ZipCity ZipCity { get; set; }
+        public DbSet<ZipCity> ZipCities { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

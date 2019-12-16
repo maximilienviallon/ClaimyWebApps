@@ -19,8 +19,8 @@ namespace ClaimyWebApps.Models
         //foreign keys
 
 
-        public ICollectible<Claim> Claims; //Add to my cases
-        public ICollectible<Log> Logs; //done something
-        public ICollectible<Reply> Replies; //wrote reply
+        public ICollection<Claim> Claims { get; set; } //Add to my cases
+        public ICollection<Log> Logs { get; set; } //done something
+        public ICollection<Reply> Replies { get; set; } //wrote reply
     }
 }

@@ -8,13 +8,13 @@ namespace ClaimyWebApps.Models
 {
     public class ZipCity
     {
-        [Required]
-        public int Zipcode { get; set; } //prim key
+        [Key]
+        public string Zipcode { get; set; } //prim key
 
         //table fields
         public string City { get; set; }
 
-        public ICollectible<Customer> Customers; //zip code - city
-        public ICollectible<Claim> Claims; // zipcode - city
+        public ICollection<Customer> Customers { get; set; } //zip code - city
+        public ICollection<Claim> Claims { get; set; } // zipcode - city
     }
 }
