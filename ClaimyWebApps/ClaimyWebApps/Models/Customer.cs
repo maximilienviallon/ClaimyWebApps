@@ -25,6 +25,8 @@ namespace ClaimyWebApps.Models
         public ICollectible<Claim> Claims; // Claims connected to customer
         public ICollectible<ZipCity> ZipCities; //zipcode - city
         public ICollectible<Reply> Replies; //replies written by Customer
+        public ICollectible<Log> Logs; //events triggered by customer
+
 
 
 
