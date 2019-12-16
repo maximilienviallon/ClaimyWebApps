@@ -8,7 +8,7 @@ namespace ClaimyWebApps.Models
 {
     public class Customer
     {
-        //got to check the webhooks
+        //got to check the webhooks X2
         [Key]
         public int CustomerID { get; set; } //prim key
 
