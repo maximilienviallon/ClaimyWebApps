@@ -187,16 +187,28 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912161653314_InitialModel.cs" />
+    <Compile Include="Migrations\201912161653314_InitialModel.Designer.cs">
+      <DependentUpon>201912161653314_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912161655372_AddModels.cs" />
+    <Compile Include="Migrations\201912161655372_AddModels.Designer.cs">
+      <DependentUpon>201912161655372_AddModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912161658533_AddTables.cs" />
+    <Compile Include="Migrations\201912161658533_AddTables.Designer.cs">
+      <DependentUpon>201912161658533_AddTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Claim.cs" />
-    <Compile Include="Models\Management.cs" />
     <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\Lawyers.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Log.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Reply.cs" />
+    <Compile Include="Models\ZipCity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModel\EmployeeProfileViewModel.cs" />
@@ -275,6 +287,17 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201912161653314_InitialModel.resx">
+      <DependentUpon>201912161653314_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912161655372_AddModels.resx">
+      <DependentUpon>201912161655372_AddModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912161658533_AddTables.resx">
+      <DependentUpon>201912161658533_AddTables.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

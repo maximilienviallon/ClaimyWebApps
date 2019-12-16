@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -23,5 +24,9 @@ namespace ClaimyWebApps.Models
         public ICollectible<Reply> Replies; //Message happened
         public ICollectible<Claim> Claims; //on which case thing happened
 
+    }
+
+    public interface ICollectible<T>
+    {
     }
 }
