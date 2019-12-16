@@ -9,7 +9,7 @@ namespace ClaimyWebApps.Models
 {
     public class Claim
     {
-        [Required]
+        [Key]
         public int ClaimID { get; set; } //prim key
 
         //table fields
@@ -17,7 +17,7 @@ namespace ClaimyWebApps.Models
         public string Transgression { get; set; }
         public string Remarks { get; set; }
         public string LicensePlate { get; set; }
-        public string DriversName { get; set; } //surname + lastname?
+        public string DriversFirstName { get; set; } 
         public string Address { get; set; } 
         public string PostCode { get; set; }
         public string Email { get; set; }
@@ -27,7 +27,7 @@ namespace ClaimyWebApps.Models
         public string PaymentInfo { get; set; }
 
         //foreign keys
-        //public int CustomerID { get; set; }
+        
 
         public ICollection<Customer> Customers { get; set; } //Connected to customer
         public ICollection<Employee> Employees { get; set; } //added to this employee's watchlist

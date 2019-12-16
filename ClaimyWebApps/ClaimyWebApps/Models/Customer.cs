@@ -8,8 +8,8 @@ namespace ClaimyWebApps.Models
 {
     public class Customer
     {
-        ///got to check the webhooks
-        [Required]
+        //got to check the webhooks
+        [Key]
         public int CustomerID { get; set; } //prim key
 
         //table fields
@@ -17,18 +17,11 @@ namespace ClaimyWebApps.Models
         public string Email { get; set; }
         public string Password { get; set; }
 
-        //What do we wanna store about them? Do we really need to know where they from and stuff?
-        public string Address { get; set; } 
-        public string PostCodeID { get; set; }
-
         //foreign keys
-
-        //public int Claim { get; set; }
-        //public string Type { get; set; }
 
         public ICollection<Claim> Claims { get; set; } // Claims connected to customer
         public ICollection<ZipCity> ZipCities { get; set; } //zipcode - city
-        public ICollection<Reply> Replies { get; set; } //replies written by Customer
+        public ICollection<Reply> Replies { get; set; } //replies written by Customer that should be replies from the lawyers
         public ICollection<Log> Logs { get; set; } //events triggered by customer
 
 

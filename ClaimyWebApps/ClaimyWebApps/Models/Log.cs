@@ -8,16 +8,14 @@ namespace ClaimyWebApps.Models
 {
     public class Log
     {
-        [Required]
+        [Key]
         public int LogID { get; set; } //prim key
 
         //table fields
         public int Type { get; set; }
         public int AdditionalInfo { get; set; }
         //foreign keys
-        //public int EmployeeID { get; set; }
-        //public int CustomerID { get; set; } //should be here, could log stuff unrelated to cases
-        //public int ClaimID { get; set; }
+
 
         public ICollection<Customer> Customers { get; set; } // Customer done something
         public ICollection<Employee> Employees { get; set; } //Employee done something

@@ -191,10 +191,6 @@
     <Compile Include="Migrations\201912161653314_InitialModel.Designer.cs">
       <DependentUpon>201912161653314_InitialModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201912161655372_AddModels.cs" />
-    <Compile Include="Migrations\201912161655372_AddModels.Designer.cs">
-      <DependentUpon>201912161655372_AddModels.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201912161658533_AddTables.cs" />
     <Compile Include="Migrations\201912161658533_AddTables.Designer.cs">
       <DependentUpon>201912161658533_AddTables.cs</DependentUpon>
@@ -291,9 +287,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201912161653314_InitialModel.resx">
       <DependentUpon>201912161653314_InitialModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912161655372_AddModels.resx">
-      <DependentUpon>201912161655372_AddModels.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201912161658533_AddTables.resx">
       <DependentUpon>201912161658533_AddTables.cs</DependentUpon>

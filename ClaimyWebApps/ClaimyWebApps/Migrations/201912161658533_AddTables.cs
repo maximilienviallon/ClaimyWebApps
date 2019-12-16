@@ -15,8 +15,6 @@ namespace ClaimyWebApps.Migrations
                         Name = c.String(),
                         Email = c.String(),
                         Password = c.String(),
-                        Address = c.String(),
-                        PostCodeID = c.String(),
                     })
                 .PrimaryKey(t => t.CustomerID);
             
@@ -29,7 +27,7 @@ namespace ClaimyWebApps.Migrations
                         Transgression = c.String(),
                         Remarks = c.String(),
                         LicensePlate = c.String(),
-                        DriversName = c.String(),
+                        DriversFirstName = c.String(),
                         Address = c.String(),
                         PostCode = c.String(),
                         Email = c.String(),

@@ -8,7 +8,7 @@ namespace ClaimyWebApps.Models
 {
     public class Employee
     {
-        [Required]
+        [Key]
         public int EmployeeID { get; set; } //prim key
 
         //table fields

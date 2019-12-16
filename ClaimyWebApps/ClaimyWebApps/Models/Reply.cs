@@ -8,7 +8,7 @@ namespace ClaimyWebApps.Models
 {
     public class Reply
     {
-        [Required]
+        [Key]
         public int ReplyID { get; set; } //prim key
 
         //table fields
