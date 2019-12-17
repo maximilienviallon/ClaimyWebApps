@@ -1,0 +1,32 @@
+﻿@model ClaimyWebApps.ViewModel.CustomerProfileViewModel
+@{
+    ViewBag.Title = "LoggedInMainPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Claimy</h2>
+
+<table class ="table table-bordered table-condensed">
+	<thead>
+	<tr>
+		<th>FeeNumber</th>
+	</tr>
+	</thead>
+	<tbody>
+    @foreach (var claims in Model.Claims)
+    {
+	    <tr>
+            <td>@claims.FeeNum</td>
+	    </tr>
+    }
+	</tbody>
+</table>
+@section scripts
+{
+    <script>
+        $(document).ready(function() {
+            $("#claims").DataTable();
+        })
+        
+    </script>
+}

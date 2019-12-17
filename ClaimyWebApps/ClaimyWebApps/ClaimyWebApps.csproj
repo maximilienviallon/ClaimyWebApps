@@ -195,6 +195,10 @@
     <Compile Include="Migrations\201912161658533_AddTables.Designer.cs">
       <DependentUpon>201912161658533_AddTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912170325582_RemovedEmailFromClaim.cs" />
+    <Compile Include="Migrations\201912170325582_RemovedEmailFromClaim.Designer.cs">
+      <DependentUpon>201912170325582_RemovedEmailFromClaim.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Claim.cs" />
@@ -439,10 +443,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Customer\LoggedInMainPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Customer\" />
+    <Folder Include="Views\LoggedInMainPage\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -463,6 +468,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201912161658533_AddTables.resx">
       <DependentUpon>201912161658533_AddTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912170325582_RemovedEmailFromClaim.resx">
+      <DependentUpon>201912170325582_RemovedEmailFromClaim.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

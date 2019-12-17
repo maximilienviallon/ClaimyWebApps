@@ -20,7 +20,6 @@ namespace ClaimyWebApps.Models
         public string LicensePlate { get; set; }
         public string DriversFirstName { get; set; } 
         public string Address { get; set; }
-        public string Email { get; set; }
         public string Appeal { get; set; }
         public string GuardNumber { get; set; }
         public string Amount { get; set; }
