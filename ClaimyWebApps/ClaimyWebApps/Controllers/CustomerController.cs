@@ -24,10 +24,24 @@ namespace ClaimyWebApps.Controllers
 
         public ActionResult LoggedInMainPage()
         {
-            var customerProfileViewModel = new CustomerProfileViewModel
+            var customer = new Customer();
+            var claims = _context.Claims.ToList();
+            List<Claim> ToBeDeleted = new List<Claim>();
+            foreach (Claim Line in claims)
+            { 
+            if(Line.CustomerEmail.Equals("max@gmail.com"))
+                {
+                    ToBeDeleted.Add(Line);
+                }
+            }
+            foreach (Claim Line in ToBeDeleted)
             {
-                Customer = new Customer(),
-                Claims = _context.Claims.ToList()
+                claims.Remove(Line);
+            }
+            var customerProfileViewModel = new CustomerProfileViewModel
+                {
+                    Customer = customer,
+                    Claims = claims
             };
 
 

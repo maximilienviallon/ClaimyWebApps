@@ -8,7 +8,9 @@ namespace ClaimyWebApps.ViewModel
 {
     public class CustomerProfileViewModel
     { 
+        
         public List<Claim> Claims { get; set; }
+
         public Customer Customer { get; set; }
     }
 }
