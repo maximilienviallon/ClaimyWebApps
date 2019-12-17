@@ -101,7 +101,7 @@ namespace ClaimyWebApps.Models
 
         public string Code { get; set; }
     }
-
+    //sggsgrs
     public class ForgotPasswordViewModel
     {
         [Required]
@@ -110,3 +110,5 @@ namespace ClaimyWebApps.Models
         public string Email { get; set; }
     }
 }
+
+//sgsgsr
