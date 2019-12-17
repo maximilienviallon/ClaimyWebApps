@@ -102,6 +102,7 @@ namespace ClaimyWebApps.Models
         public string Code { get; set; }
     }
     //sggsgrs
+    //gsegssgs
     public class ForgotPasswordViewModel
     {
         [Required]
