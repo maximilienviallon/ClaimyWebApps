@@ -9,18 +9,22 @@ namespace ClaimyWebApps.Models
     public class Log
     {
         [Key]
-        public int LogID { get; set; } //prim key
+        public int ID { get; set; } //prim key
 
         //table fields
-        public int Type { get; set; }
-        public int AdditionalInfo { get; set; }
+        public string Type { get; set; }
+        public string AdditionalInfo { get; set; }
         //foreign keys
 
+        public Customer Customer { get; set; }
+        public string CustomerEmail { get; set; }
+        public Employee Employee { get; set; }
+        public int? EmployeeID { get; set; }
+        public Reply Reply { get; set; }
+        public int? ReplyID { get; set; }
+        public Claim Claim { get; set; }
+        public int? ClaimID { get; set; }
 
-        public ICollection<Customer> Customers { get; set; } // Customer done something
-        public ICollection<Employee> Employees { get; set; } //Employee done something
-        public ICollection<Reply> Replies { get; set; } //Message happened
-        public ICollection<Claim> Claims { get; set; } //on which case thing happened
 
     }
 

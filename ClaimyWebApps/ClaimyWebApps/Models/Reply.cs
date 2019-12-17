@@ -9,20 +9,17 @@ namespace ClaimyWebApps.Models
     public class Reply
     {
         [Key]
-        public int ReplyID { get; set; } //prim key
+        public int ID { get; set; } //prim key
 
         //table fields
         
         public string ReplyText { get; set; }
 
         //foreign keys
-        //public int EmployeeID { get; set; }
-        //public int ClaimID { get; set; } //in theory since every case will have a mail/user connected we dont need customerID field
-
-
-        public ICollection<Employee> Employees { get; set; } //if written by employee
-        public ICollection<Log> Logs { get; set; } //for proper logging
-        public ICollection<Claim> Claims { get; set; } //Case on which reply has been made
-
+        public Employee Employee { get; set; }
+        public int? EmployeeID { get; set; }
+        public Claim Claim { get; set; }
+        public int? ClaimID { get; set; } //in theory since every case will have a mail/user connected we don't need customerID field
+        
     }
 }

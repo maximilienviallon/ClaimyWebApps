@@ -9,18 +9,18 @@ namespace ClaimyWebApps.Models
     public class Employee
     {
         [Key]
-        public int EmployeeID { get; set; } //prim key
+        public int ID { get; set; } //prim key
 
         //table fields
         public string Email { get; set; }
         public string Name { get; set; }
         public string Password { get; set; }
         public string Type { get; set; }
-        //foreign keys
 
-
+       
+        
+        //bridge table connections
         public ICollection<Claim> Claims { get; set; } //Add to my cases
-        public ICollection<Log> Logs { get; set; } //done something
-        public ICollection<Reply> Replies { get; set; } //wrote reply
+        
     }
 }

@@ -8,22 +8,15 @@ namespace ClaimyWebApps.Models
 {
     public class Customer
     {
-        //got to check the webhooks X4
+        
         [Key]
-        public int CustomerID { get; set; } //prim key
+        public string Email { get; set; }
 
         //table fields
         public string Name { get; set; }
-        public string Email { get; set; }
         public string Password { get; set; }
 
-        //foreign keys
-
-        public ICollection<Claim> Claims { get; set; } // Claims connected to customer
-        public ICollection<ZipCity> ZipCities { get; set; } //zipcode - city
-        public ICollection<Reply> Replies { get; set; } //replies written by Customer that should be replies from the lawyers
-        public ICollection<Log> Logs { get; set; } //events triggered by customer
-
+        
 
 
 

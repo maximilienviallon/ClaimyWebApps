@@ -14,7 +14,6 @@ namespace ClaimyWebApps.Models
         //table fields
         public string City { get; set; }
 
-        public ICollection<Customer> Customers { get; set; } //zip code - city
-        public ICollection<Claim> Claims { get; set; } // zipcode - city
+
     }
 }
