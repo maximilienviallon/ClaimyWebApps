@@ -8,7 +8,7 @@ namespace ClaimyWebApps.ViewModel
 {
     public class CustomerProfileViewModel
     { 
-        public IEnumerable<Claim> Claims { get; set; }
+        public List<Claim> Claims { get; set; }
         public Customer Customer { get; set; }
     }
 }
