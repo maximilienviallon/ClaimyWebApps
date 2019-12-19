@@ -101,6 +101,7 @@ namespace ClaimyWebApps.Models
 
         public string Code { get; set; }
     }
+
     public class ForgotPasswordViewModel
     {
         [Required]
@@ -109,3 +110,4 @@ namespace ClaimyWebApps.Models
         public string Email { get; set; }
     }
 }
+

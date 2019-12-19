@@ -75,6 +75,8 @@ namespace ClaimyWebApps.Controllers
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
+
+
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
@@ -89,6 +91,16 @@ namespace ClaimyWebApps.Controllers
                     ModelState.AddModelError("", "Invalid login attempt.");
                     return View(model);
             }
+
+            /*if (Equals(model.Email, "max@gmail.com") && Equals(model.Password, "maxi"))
+            {
+                return RedirectToLocal(returnUrl);
+            }
+            else
+            {
+                ModelState.AddModelError("", "Invalid login attempt.");
+                return View(model);
+            }*/
         }
 
         //
