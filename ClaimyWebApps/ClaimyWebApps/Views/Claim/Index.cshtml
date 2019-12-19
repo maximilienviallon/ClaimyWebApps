@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ClaimyWebApps.Models.Claim>
+@{
+    ViewBag.Title = "Claims";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Claims</h2>
+
+<table id="claims" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>ClaimID</th>
+            <th>Email</th>
+            <th>ZipCode</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+@section scripts
+{
+<script>
+    $(document).ready(function () {
+        var table = $("#claims").DataTable({
+            ajax: {
+                url: "/api/claim",
+                dataSrc: ""
+			},
+                columns: [
+                    {
+                        data: "id",
+
+				    },
+                    {
+                        data: "customer.email"
+					},
+					{
+                        data: "zipcode"
+					}
+            ]
+        });
+    });
+</script>
+}

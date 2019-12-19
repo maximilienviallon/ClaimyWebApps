@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.1.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.1.0\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -177,13 +180,19 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\MappingProfile.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\API\ClaimController.cs" />
+    <Compile Include="Controllers\ClaimController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Dtos\ClaimDto.cs" />
+    <Compile Include="Dtos\CustomerDto.cs" />
+    <Compile Include="Dtos\ZipCityDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -198,6 +207,14 @@
     <Compile Include="Migrations\201912170325582_RemovedEmailFromClaim.cs" />
     <Compile Include="Migrations\201912170325582_RemovedEmailFromClaim.Designer.cs">
       <DependentUpon>201912170325582_RemovedEmailFromClaim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912192110591_changedCustomerEmailToEmail.cs" />
+    <Compile Include="Migrations\201912192110591_changedCustomerEmailToEmail.Designer.cs">
+      <DependentUpon>201912192110591_changedCustomerEmailToEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912192205556_revertedEmailToCustomerEmail.cs" />
+    <Compile Include="Migrations\201912192205556_revertedEmailToCustomerEmail.Designer.cs">
+      <DependentUpon>201912192205556_revertedEmailToCustomerEmail.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -448,6 +465,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Customer\LoggedInMainPage.cshtml" />
+    <Content Include="Views\Claim\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\LoggedInMainPage\" />
@@ -474,6 +492,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201912170325582_RemovedEmailFromClaim.resx">
       <DependentUpon>201912170325582_RemovedEmailFromClaim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912192110591_changedCustomerEmailToEmail.resx">
+      <DependentUpon>201912192110591_changedCustomerEmailToEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912192205556_revertedEmailToCustomerEmail.resx">
+      <DependentUpon>201912192205556_revertedEmailToCustomerEmail.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

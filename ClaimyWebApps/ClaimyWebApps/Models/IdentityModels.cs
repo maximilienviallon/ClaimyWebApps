@@ -21,7 +21,7 @@ namespace ClaimyWebApps.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Claim> Claims { get; set; }
-        public DbSet<Customer> CiCustomers { get; set; }
+        public DbSet<Customer> Customers { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Log> Logs { get; set; }
         public DbSet<Reply> Replies { get; set; }
