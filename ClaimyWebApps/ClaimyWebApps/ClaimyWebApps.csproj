@@ -216,6 +216,14 @@
     <Compile Include="Migrations\201912192205556_revertedEmailToCustomerEmail.Designer.cs">
       <DependentUpon>201912192205556_revertedEmailToCustomerEmail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912192314248_populateClaimTable.cs" />
+    <Compile Include="Migrations\201912192314248_populateClaimTable.Designer.cs">
+      <DependentUpon>201912192314248_populateClaimTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912192325136_populateClaimTableAndForeignKeyTables.cs" />
+    <Compile Include="Migrations\201912192325136_populateClaimTableAndForeignKeyTables.Designer.cs">
+      <DependentUpon>201912192325136_populateClaimTableAndForeignKeyTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Claim.cs" />
@@ -466,6 +474,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Customer\LoggedInMainPage.cshtml" />
     <Content Include="Views\Claim\Index.cshtml" />
+    <Content Include="Views\Claim\NewClaim.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\LoggedInMainPage\" />
@@ -498,6 +507,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201912192205556_revertedEmailToCustomerEmail.resx">
       <DependentUpon>201912192205556_revertedEmailToCustomerEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912192314248_populateClaimTable.resx">
+      <DependentUpon>201912192314248_populateClaimTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912192325136_populateClaimTableAndForeignKeyTables.resx">
+      <DependentUpon>201912192325136_populateClaimTableAndForeignKeyTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

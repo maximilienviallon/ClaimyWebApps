@@ -1,0 +1,87 @@
+﻿@model ClaimyWebApps.Models.Claim
+@{
+    ViewBag.Title = "NewClaim";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>NewClaim</h2>
+
+@using (Html.BeginForm("NewClaim", "ClaimController"))
+{
+    <div id="FeeNum" class="form-group">
+        @Html.LabelFor(m => m.FeeNum)
+        @Html.TextBoxFor(m => m.FeeNum, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.FeeNum)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Transgression)
+        @Html.TextBoxFor(m => m.Transgression, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Transgression)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Remarks)
+        @Html.TextBoxFor(m => m.Remarks, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Remarks)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.LicensePlate)
+        @Html.TextBoxFor(m => m.LicensePlate, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.LicensePlate)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.DriversFirstName)
+        @Html.TextBoxFor(m => m.DriversFirstName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.DriversFirstName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Address)
+        @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Address)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Appeal)
+        @Html.TextBoxFor(m => m.Appeal, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Appeal)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.GuardNumber)
+        @Html.TextBoxFor(m => m.GuardNumber, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.GuardNumber)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Amount)
+        @Html.TextBoxFor(m => m.Amount, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Amount)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.PaymentInfo)
+        @Html.TextBoxFor(m => m.PaymentInfo, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.PaymentInfo)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Zipcode)
+        @Html.TextBoxFor(m => m.Zipcode, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Zipcode)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.CustomerEmail)
+        @Html.TextBoxFor(m => m.CustomerEmail, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.CustomerEmail)
+    </div>
+    @Html.HiddenFor(m => m.ID)
+    @Html.AntiForgeryToken()
+    <button id="btnAdd" type="submit" class="btn btn-primary">Save</button>
+
+    
+}
+@section scripts
+{
+    <script>
+
+
+
+
+
+    </script>
+}

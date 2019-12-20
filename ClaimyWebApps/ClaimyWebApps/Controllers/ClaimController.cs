@@ -1,4 +1,5 @@
 ﻿using ClaimyWebApps.Models;
+using ClaimyWebApps.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,12 @@ namespace ClaimyWebApps.Controllers
 
             
             return View();
+        }
+
+        public ActionResult NewClaim()
+        {
+            var claims = _context.Claims.ToList();
+            return View("NewClaim", claims);
         }
     }
 }

@@ -36,6 +36,17 @@ namespace ClaimyWebApps.Controllers.API
                 return Ok(ClaimDtos);
         }
 
+        //Post /api/claim
+        [HttpPost]
+        public IHttpActionResult CreateClaim(ClaimDto claimDto)
+        {
+
+            var claim = Mapper.Map<ClaimDto, Claim>(claimDto);
+            _context.Claims.Add(claim);
+            _context.SaveChanges();
+            return Created(new Uri(Request.RequestUri + "/" + claim.ID), claimDto);
+        }
+
         // GET: api/Claim/5
         public string Get(int id)
         {
