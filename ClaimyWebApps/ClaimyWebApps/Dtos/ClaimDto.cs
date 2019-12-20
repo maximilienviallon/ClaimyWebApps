@@ -9,9 +9,8 @@ namespace ClaimyWebApps.Dtos
 {
     public class ClaimDto
     {
-        public int ID { get; set; } //prim key
+        public int ID { get; set; }
 
-        //table fields
         public int? FeeNum { get; set; }
         public string Transgression { get; set; }
         public string Remarks { get; set; }
@@ -23,12 +22,10 @@ namespace ClaimyWebApps.Dtos
         public string Amount { get; set; }
         public string PaymentInfo { get; set; }
 
-        //foreign keys
         public ZipCityDto ZipCity { get; set; }
         public string Zipcode { get; set; }
         public CustomerDto Customer { get; set; }
-        public string CutomerEmail { get; set; }
+        public string CustomerEmail { get; set; }
 
-        public ICollection<Employee> Employees { get; set; }
     }
 }

@@ -27,12 +27,11 @@ namespace ClaimyWebApps.Controllers.API
 
             var claimQuery = _context.Claims.Include(c => c.Customer);
             if(!String.IsNullOrWhiteSpace(query))
-            
-                claimQuery = claimQuery.Where(c => c.CustomerEmail.Contains(query));
+            claimQuery = claimQuery.Where(c => c.ID.Equals(query));
 
-                var ClaimDtos = claimQuery.ToList().Select(Mapper.Map<Claim, ClaimDto>);
+            var ClaimDtos = claimQuery.ToList().Select(Mapper.Map<Claim, ClaimDto>);
 
-                return Ok(ClaimDtos);
+            return Ok(ClaimDtos);
         }
         public IHttpActionResult GetClaim(int id)
         {
