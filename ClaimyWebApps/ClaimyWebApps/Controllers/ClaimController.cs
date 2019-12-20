@@ -30,8 +30,16 @@ namespace ClaimyWebApps.Controllers
 
         public ActionResult NewClaim()
         {
-            var claims = _context.Claims.ToList();
-            return View("NewClaim", claims);
+            var customers = _context.Customers.ToList();
+            var zipcities = _context.ZipCities.ToList();
+            var viewModel = new ClaimformViewModel()
+            {
+                Customers = customers,
+                ZipCities = zipcities,
+                Claim = new Claim()
+                
+            };
+            return View("NewClaim", viewModel);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿@model ClaimyWebApps.Models.Claim
+﻿@model ClaimyWebApps.ViewModel.ClaimformViewModel
 @{
     ViewBag.Title = "NewClaim";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,70 +6,70 @@
 
 <h2>NewClaim</h2>
 
-@using (Html.BeginForm("NewClaim", "ClaimController"))
+@using (Html.BeginForm("NewClaim", "Claim"))
 {
     <div id="FeeNum" class="form-group">
-        @Html.LabelFor(m => m.FeeNum)
-        @Html.TextBoxFor(m => m.FeeNum, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.FeeNum)
+        @Html.LabelFor(m => m.Claim.FeeNum)
+        @Html.TextBoxFor(m => m.Claim.FeeNum, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Claim.FeeNum)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Transgression)
-        @Html.TextBoxFor(m => m.Transgression, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Transgression)
+        @Html.LabelFor(m => m.Claim.Transgression)
+        @Html.TextBoxFor(m => m.Claim.Transgression, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Claim.Transgression)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Remarks)
-        @Html.TextBoxFor(m => m.Remarks, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Remarks)
+        @Html.LabelFor(m => m.Claim.Remarks)
+        @Html.TextBoxFor(m => m.Claim.Remarks, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Claim.Remarks)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.LicensePlate)
-        @Html.TextBoxFor(m => m.LicensePlate, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.LicensePlate)
+        @Html.LabelFor(m => m.Claim.LicensePlate)
+        @Html.TextBoxFor(m => m.Claim.LicensePlate, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Claim.LicensePlate)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.DriversFirstName)
-        @Html.TextBoxFor(m => m.DriversFirstName, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.DriversFirstName)
+        @Html.LabelFor(m => m.Claim.DriversFirstName)
+        @Html.TextBoxFor(m => m.Claim.DriversFirstName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Claim.DriversFirstName)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Address)
-        @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Address)
+        @Html.LabelFor(m => m.Claim.Address)
+        @Html.TextBoxFor(m => m.Claim.Address, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Claim.Address)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Appeal)
-        @Html.TextBoxFor(m => m.Appeal, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Appeal)
+        @Html.LabelFor(m => m.Claim.Appeal)
+        @Html.TextBoxFor(m => m.Claim.Appeal, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Claim.Appeal)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.GuardNumber)
-        @Html.TextBoxFor(m => m.GuardNumber, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.GuardNumber)
+        @Html.LabelFor(m => m.Claim.GuardNumber)
+        @Html.TextBoxFor(m => m.Claim.GuardNumber, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Claim.GuardNumber)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Amount)
-        @Html.TextBoxFor(m => m.Amount, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Amount)
+        @Html.LabelFor(m => m.Claim.Amount)
+        @Html.TextBoxFor(m => m.Claim.Amount, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Claim.Amount)
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(m => m.PaymentInfo)
-        @Html.TextBoxFor(m => m.PaymentInfo, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.PaymentInfo)
+        @Html.LabelFor(m => m.Claim.PaymentInfo)
+        @Html.TextBoxFor(m => m.Claim.PaymentInfo, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Claim.PaymentInfo)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Zipcode)
-        @Html.TextBoxFor(m => m.Zipcode, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Zipcode)
+        @Html.LabelFor(m => m.Claim.Zipcode)
+        @Html.TextBoxFor(m => m.Claim.Zipcode, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Claim.Zipcode)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.CustomerEmail)
-        @Html.TextBoxFor(m => m.CustomerEmail, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.CustomerEmail)
+        @Html.LabelFor(m => m.Claim.CustomerEmail)
+        @Html.TextBoxFor(m => m.Claim.CustomerEmail, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Claim.CustomerEmail)
     </div>
-    @Html.HiddenFor(m => m.ID)
+    @Html.HiddenFor(m => m.Claim.ID)
     @Html.AntiForgeryToken()
     <button id="btnAdd" type="submit" class="btn btn-primary">Save</button>
 
