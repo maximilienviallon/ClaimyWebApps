@@ -47,17 +47,6 @@ namespace ClaimyWebApps.Controllers.API
             return Created(new Uri(Request.RequestUri + "/" + claim.ID), claimDto);
         }
 
-
-        // PUT: api/Claim/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE: api/Claim/5
-        public void Delete(int id)
-        {
-        }
-
         [HttpPut]
         public IHttpActionResult UpdateClaim(int id, ClaimDto claimDto)
         {
