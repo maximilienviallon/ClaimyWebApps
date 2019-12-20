@@ -19,11 +19,10 @@ namespace ClaimyWebApps.Controllers.API
         public ClaimController()
         {
             _context = new ApplicationDbContext();
-            _context.Configuration.ProxyCreationEnabled = false;
         }
         
         // GET: api/Claim
-        public IHttpActionResult Get(string query = null)
+        public IHttpActionResult GetClaim(string query = null)
         {
 
             var claimQuery = _context.Claims.Include(c => c.Customer);
@@ -35,6 +34,16 @@ namespace ClaimyWebApps.Controllers.API
 
                 return Ok(ClaimDtos);
         }
+        public IHttpActionResult GetClaim(int id)
+        {
+            var claim = _context.Claims.SingleOrDefault(c => c.ID == id);
+
+            if (claim == null)
+                return NotFound();
+
+            return Ok(Mapper.Map<Claim, ClaimDto>(claim));
+        }
+
 
         //Post /api/claim
         [HttpPost]
@@ -47,16 +56,6 @@ namespace ClaimyWebApps.Controllers.API
             return Created(new Uri(Request.RequestUri + "/" + claim.ID), claimDto);
         }
 
-
-        // PUT: api/Claim/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE: api/Claim/5
-        public void Delete(int id)
-        {
-        }
 
         [HttpPut]
         public IHttpActionResult UpdateClaim(int id, ClaimDto claimDto)
