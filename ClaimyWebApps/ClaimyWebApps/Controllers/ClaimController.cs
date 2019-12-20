@@ -51,7 +51,7 @@ namespace ClaimyWebApps.Controllers
                     ZipCities = _context.ZipCities.ToList(),
                     Customers = _context.Customers.ToList()
                 };
-                return View("CustomerForm", viewModel);
+                return View("NewClaim", viewModel);
             }
             if(claim.ID == 0)
             {

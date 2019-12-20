@@ -47,16 +47,6 @@ namespace ClaimyWebApps.Controllers.API
             return Created(new Uri(Request.RequestUri + "/" + claim.ID), claimDto);
         }
 
-        // GET: api/Claim/5
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST: api/Claim
-        public void Post([FromBody]string value)
-        {
-        }
 
         // PUT: api/Claim/5
         public void Put(int id, [FromBody]string value)
@@ -66,6 +56,39 @@ namespace ClaimyWebApps.Controllers.API
         // DELETE: api/Claim/5
         public void Delete(int id)
         {
+        }
+
+        [HttpPut]
+        public IHttpActionResult UpdateClaim(int id, ClaimDto claimDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            var claimInDb = _context.Claims.SingleOrDefault(c => c.ID == id);
+
+            if (claimInDb == null)
+                return NotFound();
+
+            Mapper.Map(claimDto, claimInDb);
+
+            _context.SaveChanges();
+
+            return Ok();
+        }
+
+        // DELETE /api/customers/1
+        [HttpDelete]
+        public IHttpActionResult DeleteClaim(int id)
+        {
+            var claimInDb = _context.Claims.SingleOrDefault(c => c.ID == id);
+
+            if (claimInDb == null)
+                return NotFound();
+
+            _context.Claims.Remove(claimInDb);
+            _context.SaveChanges();
+
+            return Ok();
         }
     }
 }
